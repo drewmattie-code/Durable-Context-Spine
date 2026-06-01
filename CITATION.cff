@@ -1,0 +1,39 @@
+cff-version: 1.2.0
+title: "Durable Context Spine: An architectural pattern for agent state and memory that survives across sessions and time"
+message: "If you use this specification, please cite it as below."
+type: software
+authors:
+  - given-names: Drew
+    family-names: Mattie
+    affiliation: "SaaSquach AI Labs (a division of Charles & Roe Inc.)"
+repository-code: "https://github.com/drewmattie-code/Durable-Context-Spine"
+url: "https://github.com/drewmattie-code/Durable-Context-Spine"
+license:
+  - CC-BY-4.0
+  - MIT
+date-released: 2026-06-01
+version: "0.1-draft"
+abstract: >
+  DCS (Durable Context Spine) is an architectural pattern for the temporal-
+  persistence layer of agent systems — the substrate that lets project state,
+  memory, and knowledge survive the context-window boundary, disconnected
+  sessions, and the passage of time. Where ACS coordinates agents within a run
+  (the concurrency axis), DCS persists what survives across runs (the temporal
+  axis). It addresses four documented failure modes of long-lived agent work:
+  false completion (declaring done on unverified work), inherited mess (no clean
+  handoff state), the re-derivation tax (re-discovering orientation every
+  session), and durable-state rot (stale memory that misleads). The pattern is
+  defined as ten principles plus reference SLAs and a numbered build sequence. It
+  is the companion spec to PDS (which scopes one agent's tools) and ACS (which
+  coordinates many agents within a run); DCS persists the state they share.
+keywords:
+  - agent-memory
+  - durable-context
+  - long-running-agents
+  - system-of-record
+  - context-window
+  - compaction
+  - llm-agents
+  - agent-harness
+  - llm-architecture
+  - ai-infrastructure

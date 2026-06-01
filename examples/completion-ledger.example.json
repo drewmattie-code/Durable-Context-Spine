@@ -1,0 +1,62 @@
+{
+  "_comment": "DCS completion ledger — the inviolable, verification-gated ground truth of 'done'. Principle #2. Stored as JSON, not Markdown, because models are far less likely to casually rewrite a rigid structure. A 'passes' flag flips to true ONLY after the behavior is verified end-to-end the way a user would experience it — never after the code is merely written. Removing or weakening an entry is unacceptable.",
+  "project": "example-chat-app",
+  "ledger_version": "1.0",
+  "last_verified_session": "2026-06-01T14:20:00Z",
+  "items": [
+    {
+      "id": "chat-new-conversation",
+      "category": "functional",
+      "description": "New Chat button creates a fresh conversation",
+      "steps": [
+        "Navigate to the main interface",
+        "Click the 'New Chat' button",
+        "Verify a new conversation is created and shown empty",
+        "Verify the new conversation appears in the sidebar"
+      ],
+      "verification": "browser-e2e",
+      "passes": true,
+      "verified_at": "2026-06-01T14:05:00Z"
+    },
+    {
+      "id": "chat-send-receive",
+      "category": "functional",
+      "description": "User can send a message and receive a streamed response",
+      "steps": [
+        "Open a conversation",
+        "Type a query and press Enter",
+        "Verify the user message renders",
+        "Verify an assistant response streams in and completes"
+      ],
+      "verification": "browser-e2e",
+      "passes": true,
+      "verified_at": "2026-06-01T14:12:00Z"
+    },
+    {
+      "id": "chat-history-persists",
+      "category": "functional",
+      "description": "Conversation history persists across a page reload",
+      "steps": [
+        "Send two messages in a conversation",
+        "Reload the page",
+        "Verify both messages are still present and in order"
+      ],
+      "verification": "browser-e2e",
+      "passes": false,
+      "note": "Implemented but not yet verified end-to-end. Do NOT mark passing until the reload test is run and observed."
+    },
+    {
+      "id": "auth-signin",
+      "category": "functional",
+      "description": "Returning user can sign in and land on their conversation list",
+      "steps": [
+        "Submit valid credentials on the sign-in form",
+        "Verify redirect to the conversation list",
+        "Verify the list shows the user's prior conversations"
+      ],
+      "verification": "browser-e2e",
+      "passes": false,
+      "note": "Not started."
+    }
+  ]
+}
