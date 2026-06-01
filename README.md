@@ -6,7 +6,7 @@
 
 [![License: CC BY 4.0](https://img.shields.io/badge/spec-CC_BY_4.0-blue?style=flat-square)](LICENSE-CC-BY-4.0)
 [![License: MIT](https://img.shields.io/badge/code-MIT-green?style=flat-square)](LICENSE-MIT)
-[![Status: v0.1-draft](https://img.shields.io/badge/status-v0.1--draft-F59E0B?style=flat-square)](SPEC.md)
+[![Status: v1.0](https://img.shields.io/badge/status-v1.0-0F766E?style=flat-square)](SPEC.md)
 [![Catalog: PDS · ACS · ESF · CRI · AGS](https://img.shields.io/badge/catalog-PDS_·_ACS_·_ESF_·_CRI_·_AGS-7C3AED?style=flat-square)](#where-dcs-fits-in-the-stack)
 
 </div>

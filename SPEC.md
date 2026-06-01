@@ -1,6 +1,6 @@
 # Durable Context Spine — Specification
 
-> **Status:** v0.1-draft · Drew Mattie · 2026-06-01
+> **Status:** v1.0 · Drew Mattie · 2026-06-01
 > **License:** [CC BY 4.0](LICENSE-CC-BY-4.0)
 
 This is the full technical specification for the Durable Context Spine pattern. The [README](README.md) is the elevator pitch; this document is the build reference.
@@ -305,7 +305,8 @@ DCS composes with the rest of the Spine catalog:
 
 This specification follows semantic versioning. Breaking changes to the conceptual model bump the major version; new principles or refinements bump the minor. Editorial fixes bump the patch.
 
-- **v0.1-draft** — initial public draft (2026-06-01), released under CC BY 4.0 + MIT as the temporal layer of the Spine catalog.
+- **v0.1-draft** — initial draft (2026-06-01). Internal review.
+- **v1.0** — first public release under CC BY 4.0 + MIT (2026-06-01). The temporal layer of the Spine catalog (PDS · ACS · ESF · CRI · AGS · DCS).
 
 ---
 
