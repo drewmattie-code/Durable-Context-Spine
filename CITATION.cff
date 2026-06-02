@@ -15,7 +15,7 @@ date-released: 2026-06-01
 version: "1.0"
 abstract: >
   DCS (Durable Context Spine) is an architectural pattern for the temporal-
-  persistence layer of agent systems — the substrate that lets project state,
+  persistence layer of agent systems, the substrate that lets project state,
   memory, and knowledge survive the context-window boundary, disconnected
   sessions, and the passage of time. Where ACS coordinates agents within a run
   (the concurrency axis), DCS persists what survives across runs (the temporal

@@ -1,5 +1,5 @@
 {
-  "_comment": "DCS completion ledger — the inviolable, verification-gated ground truth of 'done'. Principle #2. Stored as JSON, not Markdown, because models are far less likely to casually rewrite a rigid structure. A 'passes' flag flips to true ONLY after the behavior is verified end-to-end the way a user would experience it — never after the code is merely written. Removing or weakening an entry is unacceptable.",
+  "_comment": "DCS completion ledger: the inviolable, verification-gated ground truth of 'done'. Principle #2. Stored as JSON, not Markdown, because models are far less likely to casually rewrite a rigid structure. A 'passes' flag flips to true ONLY after the behavior is verified end-to-end the way a user would experience it, never after the code is merely written. Removing or weakening an entry is unacceptable.",
   "project": "example-chat-app",
   "ledger_version": "1.0",
   "last_verified_session": "2026-06-01T14:20:00Z",

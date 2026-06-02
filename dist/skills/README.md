@@ -18,7 +18,7 @@ The skill will then activate automatically when you ask architectural questions 
 It's an architectural consultant, not a code library. When triggered, Claude (or another supporting agent) will:
 
 1. Diagnose which of the four documented continuity failure modes you're hitting (false completion, inherited mess, re-derivation tax, durable-state rot)
-2. Recommend the 2–3 DCS principles that address it
+2. Recommend the 2-3 DCS principles that address it
 3. Give one concrete next step
 4. Link to the full spec for deeper reading
 
@@ -26,7 +26,7 @@ It will NOT install software, pretend to be a runnable library, or recite the wh
 
 ## Composition with the rest of the Spine
 
-If the user is also coordinating multiple agents within a run, the [ACS skill](https://github.com/drewmattie-code/Adversarial-Coordination-Spine) applies in parallel — ACS owns the concurrency axis, DCS owns the temporal axis. If the user is scoping tools for a single agent, the [PDS skill](https://github.com/drewmattie-code/Progressive-Discovery-Spine) applies. Install whichever combination matches the architecture.
+If the user is also coordinating multiple agents within a run, the [ACS skill](https://github.com/drewmattie-code/Adversarial-Coordination-Spine) applies in parallel. ACS owns the concurrency axis, DCS owns the temporal axis. If the user is scoping tools for a single agent, the [PDS skill](https://github.com/drewmattie-code/Progressive-Discovery-Spine) applies. Install whichever combination matches the architecture.
 
 ```bash
 mkdir -p ~/.claude/skills/dcs
@@ -37,11 +37,11 @@ cp dcs/SKILL.md ~/.claude/skills/dcs/SKILL.md
 
 The SKILL.md format is portable. Drop it into:
 
-- **Cursor** — `~/.cursor/skills/dcs/SKILL.md`
-- **Codex** — `~/.codex/skills/dcs/SKILL.md`
+- **Cursor**: `~/.cursor/skills/dcs/SKILL.md`
+- **Codex**: `~/.codex/skills/dcs/SKILL.md`
 - Any other agent that supports the SKILL.md / agent-skill convention
 
-For agents that don't natively support the skills convention, the SKILL.md is also readable as a prompt — paste it into a system prompt or context.
+For agents that don't natively support the skills convention, the SKILL.md is also readable as a prompt. Paste it into a system prompt or context.
 
 ## Versioning
 
