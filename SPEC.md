@@ -296,6 +296,8 @@ DCS composes with the rest of the eight-spec Spine catalog. The capability layer
 - Packer, et al., *MemGPT: Towards LLMs as Operating Systems*: the working / episodic / semantic memory hierarchy and deliberate paging ([arXiv:2310.08560](https://arxiv.org/abs/2310.08560))
 - Letta, *Stateful Agents: Memory*, memory blocks, shared blocks, persistent cross-session state ([docs.letta.com](https://docs.letta.com/guides/agents/memory/))
 - *The Awesome Agent Harness* taxonomy: the "frameworks vs runtimes" distinction, where runtimes provide persistent long-running memory and scheduled execution across sessions (Layer 6)
+- AWS, *Bedrock AgentCore Memory*: managed short-term (turn-by-turn within a session) and long-term memory (asynchronously extracted semantic facts, summaries, and user preferences across sessions, via swappable Semantic, Summary, User Preference, and Custom strategies), plus episodic memory recording structured episodes of context, reasoning, action, and outcome so agents learn from experience, the closest major-vendor peer to the durable-state-and-memory-across-sessions concern DCS describes (episodic added re:Invent 2025) ([aws.amazon.com](https://aws.amazon.com/blogs/machine-learning/amazon-bedrock-agentcore-memory-building-context-aware-agents/))
+- Palantir, *Foundry AIP* (partial convergence only): AIP Threads, saved chats, and Ontology-Backed Objects persist some conversational and operational state across sessions, but do not name the durable-system-of-record, completion-ledger, clean-state-exit, and freshness disciplines DCS describes; recorded as a weak/partial citation ([palantir.com](https://www.palantir.com/docs/foundry/aip/overview))
 
 ### Adjacent specifications
 
