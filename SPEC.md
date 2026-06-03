@@ -1,6 +1,6 @@
 # Durable Context Spine: Specification
 
-> **Status:** v1.0 · Drew Mattie · 2026-06-01
+> **Status:** v1.1 · Drew Mattie · 2026-06-02
 > **License:** [CC BY 4.0](LICENSE-CC-BY-4.0)
 
 This is the full technical specification for the Durable Context Spine pattern. The [README](README.md) is the elevator pitch; this document is the build reference.
@@ -202,7 +202,7 @@ This is the MemGPT insight rendered as a discipline: the model has a small fast 
 
 **Problem.** When a long-lived agent project produces a wrong outcome, the post-mortem question is "what did we know, and when did we know it?" If state was never persisted with provenance, the answer is "we can't reconstruct it."
 
-**Pattern.** Because DCS already persists state with provenance and freshness (principle #8) under partitioned identity (principle #9), the continuity record *is* the forensic record. You can reconstruct what any session knew at any timestamp, which decision was live when an action was taken, and which stale artifact misled a run. This is what lets "bad continuity / lost or stale durable state" become a first-class entry in a cross-layer failure-attribution model, alongside bad tools (PDS), bad coordination (ACS), bad external data (ESF), bad scoring (CRI), and bad governance (AGS).
+**Pattern.** Because DCS already persists state with provenance and freshness (principle #8) under partitioned identity (principle #9), the continuity record *is* the forensic record. You can reconstruct what any session knew at any timestamp, which decision was live when an action was taken, and which stale artifact misled a run. This is what lets "bad continuity / lost or stale durable state" become a first-class entry in a cross-layer, nine-way failure-attribution model: bad customer/tool data attributes to PDS, bad world data to ESF, bad reasoning to the ACS Planner, bad evaluation to the ACS Evaluator, bad scoring to CRI, bad governance to AGS, bad continuity to DCS, bad grounding to GDS, and bad or missing registry to ARS.
 
 **Implementation.** Keep the version history immutable and queryable. Treat every durable write as an audit event. Compose with AGS so the same audit surface covers both actions and memory.
 
@@ -272,11 +272,15 @@ DCS is framework-agnostic. The pattern can be implemented in any of these stacks
 - **git**: the recovery mechanism and immutable provenance/audit substrate (principles #3, #10).
 - **Custom**: a workspace directory under version control with the four canonical artifacts is sufficient.
 
-DCS composes with the rest of the Spine catalog:
+DCS composes with the rest of the eight-spec Spine catalog. The capability layers (PDS, ACS, ESF, CRI, AGS) rest on three foundation substrates (DCS, GDS, ARS):
 
-- **[PDS](https://github.com/drewmattie-code/Progressive-Discovery-Spine)** scopes tools per task; DCS scopes durable knowledge per session, same progressive-disclosure economics, different axis.
-- **[ACS](https://github.com/drewmattie-code/Adversarial-Coordination-Spine)** coordinates agents within a run and writes its handoffs (`feature-list.json`, `progress.md`, `contract.md`) *into the DCS store*. ACS owns the within-run concurrency axis; DCS owns the across-run temporal axis. They share the substrate.
-- **[AGS](https://github.com/drewmattie-code/Agent-Governance-Spine)** binds per-agent identity and tamper-evident audit to DCS's partitions (principles #9, #10).
+- **[PDS](https://github.com/drewmattie-code/Progressive-Discovery-Spine)** (public) scopes tools per task; DCS scopes durable knowledge per session, same progressive-disclosure economics, different axis.
+- **[ACS](https://github.com/drewmattie-code/Adversarial-Coordination-Spine)** (public) coordinates agents within a run and writes its handoffs (`feature-list.json`, `progress.md`, `contract.md`) *into the DCS store*. ACS owns the within-run concurrency axis; DCS owns the across-run temporal axis. They share the substrate.
+- **[ESF](https://github.com/drewmattie-code/External-Signal-Fabric)** (public) fuses external-world signals; the signals it surfaces are persisted and provenanced through the DCS store across runs.
+- **CRI** (private, patent-preservation) scores composite risk; its inputs and outputs persist under DCS provenance and freshness.
+- **[AGS](https://github.com/drewmattie-code/Agent-Governance-Spine)** (public) binds per-agent identity and tamper-evident audit to DCS's partitions (principles #9, #10).
+- **GDS** (private/forthcoming, the Grounded Data Spine) is the grounding substrate: a canonical semantic model plus data-level entitlements. It is a foundation peer to DCS; DCS persists state across time, GDS grounds what the agents reason over.
+- **ARS** (private/forthcoming, the Agent Registry Spine) is the inventory substrate: one system of record for every agentic asset that discovery reads from and governance enforces against. It is a foundation peer to DCS.
 
 ---
 
@@ -295,9 +299,13 @@ DCS composes with the rest of the Spine catalog:
 
 ### Adjacent specifications
 
-- Progressive Discovery Spine: [github.com/drewmattie-code/Progressive-Discovery-Spine](https://github.com/drewmattie-code/Progressive-Discovery-Spine)
-- Adversarial Coordination Spine: [github.com/drewmattie-code/Adversarial-Coordination-Spine](https://github.com/drewmattie-code/Adversarial-Coordination-Spine)
-- Agent Governance Spine: [github.com/drewmattie-code/Agent-Governance-Spine](https://github.com/drewmattie-code/Agent-Governance-Spine)
+- Progressive Discovery Spine (public): [github.com/drewmattie-code/Progressive-Discovery-Spine](https://github.com/drewmattie-code/Progressive-Discovery-Spine)
+- Adversarial Coordination Spine (public): [github.com/drewmattie-code/Adversarial-Coordination-Spine](https://github.com/drewmattie-code/Adversarial-Coordination-Spine)
+- External Signal Fabric (public): [github.com/drewmattie-code/External-Signal-Fabric](https://github.com/drewmattie-code/External-Signal-Fabric)
+- Agent Governance Spine (public): [github.com/drewmattie-code/Agent-Governance-Spine](https://github.com/drewmattie-code/Agent-Governance-Spine)
+- Composite Risk Index (private, patent-preservation): composite risk scoring.
+- Grounded Data Spine (private/forthcoming): the grounding substrate, a canonical semantic model plus data-level entitlements.
+- Agent Registry Spine (private/forthcoming): the inventory substrate, one system of record for every agentic asset.
 
 ---
 
@@ -307,6 +315,7 @@ This specification follows semantic versioning. Breaking changes to the conceptu
 
 - **v0.1-draft**: initial draft (2026-06-01). Internal review.
 - **v1.0**: first public release under CC BY 4.0 + MIT (2026-06-01). The temporal layer of the Spine catalog (PDS · ACS · ESF · CRI · AGS · DCS).
+- **v1.1**: catalog expanded to eight specs (added GDS, the Grounded Data Spine, and ARS, the Agent Registry Spine, as private/forthcoming foundation siblings) and the failure-attribution model expanded to nine-way (adding bad grounding to GDS and bad or missing registry to ARS). No change to DCS's 10 principles (2026-06-02).
 
 ---
 
