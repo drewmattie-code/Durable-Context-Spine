@@ -280,7 +280,7 @@ DCS composes with the rest of the nine-spec Spine catalog. The capability layers
 - **CRI** (private, patent-preservation) scores composite risk; its inputs and outputs persist under DCS provenance and freshness.
 - **[AGS](https://github.com/drewmattie-code/Agent-Governance-Spine)** (public) binds per-agent identity and tamper-evident audit to DCS's partitions (principles #9, #10).
 - **GDS** (private/forthcoming, the Grounded Data Spine) is the grounding substrate: a canonical semantic model plus data-level entitlements. It is a foundation peer to DCS; DCS persists state across time, GDS grounds what the agents reason over.
-- **ARS** (private/forthcoming, the Agent Registry Spine) is the inventory substrate: one system of record for every agentic asset that discovery reads from and governance enforces against. It is a foundation peer to DCS.
+- **ARS** (private/forthcoming, the Agent Registry Spine) is the system of record layer for every agentic asset that discovery reads from and governance enforces against. It is a foundation peer to DCS.
 - **SRS** (private/forthcoming, the Sovereign Runtime Spine) is the execution substrate: the sovereign, first-party agent runtime the first-party agents run on, where outside agents and tools plug into the Spine and first-party agents run on SRS. It is a foundation peer to DCS.
 
 ---
@@ -308,7 +308,7 @@ DCS composes with the rest of the nine-spec Spine catalog. The capability layers
 - Agent Governance Spine (public): [github.com/drewmattie-code/Agent-Governance-Spine](https://github.com/drewmattie-code/Agent-Governance-Spine)
 - Composite Risk Index (private, patent-preservation): composite risk scoring.
 - Grounded Data Spine (private/forthcoming): the grounding substrate, a canonical semantic model plus data-level entitlements.
-- Agent Registry Spine (private/forthcoming): the inventory substrate, one system of record for every agentic asset.
+- Agent Registry Spine (private/forthcoming): the system of record layer for every agentic asset.
 - Sovereign Runtime Spine (private/forthcoming): the execution substrate, the sovereign first-party agent runtime the first-party agents run on.
 
 ---

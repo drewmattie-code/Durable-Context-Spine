@@ -80,7 +80,7 @@ The context window is scratch. The durable store is truth. Every session assumes
 
 ## Where DCS fits in the stack
 
-The Spine catalog names nine separable architectural concerns. PDS, ACS, ESF, CRI, and AGS sit on the *capability* axes: which tools, which agents, which external signals, which risk score, which governance. Four layers sit beneath them as *foundations* the capability layers depend on: **DCS is the *temporal* substrate (which state survives across time), GDS is the *grounding* substrate (which canonical, entitled data the agents reason over), ARS is the *inventory* substrate (which agentic assets exist at all), and SRS is the *execution* substrate (the sovereign, first-party runtime the first-party agents run on).** DCS is the substrate the capability layers read from and write to across runs. (GDS, the Grounded Data Spine; ARS, the Agent Registry Spine; and SRS, the Sovereign Runtime Spine, are private/forthcoming siblings, named here as foundations alongside DCS.)
+The Spine catalog names nine separable architectural concerns. PDS, ACS, ESF, CRI, and AGS sit on the *capability* axes: which tools, which agents, which external signals, which risk score, which governance. Four layers sit beneath them as *foundations* the capability layers depend on: **DCS is the *temporal* substrate (which state survives across time), GDS is the *grounding* substrate (which canonical, entitled data the agents reason over), ARS is the *system of record* layer (which agentic assets exist at all), and SRS is the *execution* substrate (the sovereign, first-party runtime the first-party agents run on).** DCS is the substrate the capability layers read from and write to across runs. (GDS, the Grounded Data Spine; ARS, the Agent Registry Spine; and SRS, the Sovereign Runtime Spine, are private/forthcoming siblings, named here as foundations alongside DCS.)
 
 ```
         ┌──────────────────────────────────────────────────┐
@@ -101,13 +101,13 @@ The Spine catalog names nine separable architectural concerns. PDS, ACS, ESF, CR
    │ hierarchy · freshness · identity-partitioned · auditable │
    ├──────────────────────────────────────────────────────────┤
    │ GDS - grounding substrate (canonical model · entitled)   │
-   │ ARS - inventory substrate (system of record for agents)  │
+   │ ARS - system of record (the asset registry)              │
    │ SRS - execution substrate (sovereign first-party runtime)│
    │ (private/forthcoming siblings)                           │
    └──────────────────────────────────────────────────────────┘
 ```
 
-ACS coordinates the agents *inside* a run and persists its handoffs into the DCS store. PDS scopes each agent's tools. DCS is the layer whose job is what survives *between* runs; GDS, ARS, and SRS are the grounding, inventory, and execution foundations the whole stack rests on. Each can be used alone; they were designed to compose.
+ACS coordinates the agents *inside* a run and persists its handoffs into the DCS store. PDS scopes each agent's tools. DCS is the layer whose job is what survives *between* runs; GDS, ARS, and SRS are the grounding, system-of-record, and execution foundations the whole stack rests on. Each can be used alone; they were designed to compose.
 
 ## The 10 principles
 
@@ -216,7 +216,7 @@ DCS is the temporal layer of a nine-spec Spine catalog:
 - **[AGS](https://github.com/drewmattie-code/Agent-Governance-Spine)** (public): deterministic governance, identity, and audit.
 - **DCS** (public, this spec): durable state and memory across sessions and time.
 - **GDS** (private/forthcoming): Grounded Data Spine, the grounding substrate (a canonical semantic model plus data-level entitlements).
-- **ARS** (private/forthcoming): Agent Registry Spine, the inventory substrate (one system of record for every agentic asset that discovery reads from and governance enforces against).
+- **ARS** (private/forthcoming): Agent Registry Spine, the system of record layer (for every agentic asset that discovery reads from and governance enforces against).
 - **SRS** (private/forthcoming): Sovereign Runtime Spine, the execution substrate (the sovereign, first-party agent runtime the first-party agents run on; outside agents and tools plug into the Spine, first-party agents run on SRS).
 
 PDS, ACS, ESF, CRI, and AGS are the capability layers. DCS, GDS, ARS, and SRS are the foundation substrates beneath them: DCS persists what survives across runs, GDS grounds what the agents reason over, ARS records which agentic assets exist at all, and SRS is the sovereign runtime the first-party agents execute on.
