@@ -187,6 +187,9 @@ The [`examples/`](examples/) directory has concrete artifacts:
 - [`completion-ledger.example.json`](examples/completion-ledger.example.json): the inviolable, verification-gated ledger of "done"
 - [`startup-sequence.md`](examples/startup-sequence.md): the deterministic per-session orientation sequence
 - [`agents-map.md`](examples/agents-map.md): a short progressive-disclosure root map pointing to deeper docs
+- [`session.py`](examples/session.py): a runnable, dependency-free demo of durable state across sessions. Three independent sessions share only the ledger on disk; one does the work but its verification gate fails, so "done" is never inferred. Run it with `python3 examples/session.py`.
+
+The formal ledger contract lives in [`schema/completion-ledger.v1.json`](schema/completion-ledger.v1.json) (principle #2, verification-gated "done").
 
 ## Citing this work
 

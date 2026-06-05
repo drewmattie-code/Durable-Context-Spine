@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/drewmattie-code/Durable-Context-Spine/schema/completion-ledger.v1.json",
+  "title": "DCS Completion Ledger",
+  "description": "The verification-gated ground truth of 'done'. Formalizes DCS principle #2: a 'passes' flag flips to true ONLY after the behavior is verified end to end, never inferred from the artifact. Stored as JSON, not prose, because models are far less likely to casually rewrite a rigid structure.",
+  "type": "object",
+  "required": ["project", "ledger_version", "items"],
+  "additionalProperties": true,
+  "properties": {
+    "project": {"type": "string"},
+    "ledger_version": {"type": "string"},
+    "last_verified_session": {"type": "string"},
+    "items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "description", "verification", "passes"],
+        "additionalProperties": true,
+        "properties": {
+          "id": {"type": "string"},
+          "category": {"type": "string"},
+          "description": {"type": "string"},
+          "steps": {
+            "type": "array",
+            "items": {"type": "string"}
+          },
+          "verification": {
+            "type": "string",
+            "description": "How 'done' is proven for this item (e.g. browser-e2e, unit-test, manual-check). Naming the gate is mandatory."
+          },
+          "passes": {
+            "type": "boolean",
+            "description": "True only after the verification gate has been run and observed to pass."
+          },
+          "verified_at": {"type": "string"},
+          "note": {"type": "string"}
+        }
+      }
+    }
+  }
+}
