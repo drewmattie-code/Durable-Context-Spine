@@ -1,9 +1,36 @@
 # Durable Context Spine: Specification
 
-> **Status:** v1.1 · Drew Mattie · 2026-06-02
+> **Status:** v1.2 · Drew Mattie · 2026-07-17
 > **License:** [CC BY 4.0](LICENSE-CC-BY-4.0)
 
 This is the full technical specification for the Durable Context Spine pattern. The [README](README.md) is the elevator pitch; this document is the build reference.
+
+---
+
+## Conformance
+
+The key words MUST, MUST NOT, SHOULD, SHOULD NOT, and MAY in this document are to be interpreted as described in BCP 14 ([RFC 2119](https://www.rfc-editor.org/rfc/rfc2119), [RFC 8174](https://www.rfc-editor.org/rfc/rfc8174)) when, and only when, they appear in all capitals.
+
+This specification separates three tiers of guidance, and only the first confers conformance:
+
+1. **Required behaviour** — the numbered requirements below (DCS-R1 …). An implementation is DCS-conformant when it satisfies every MUST-level requirement.
+2. **Recommended implementation** — the patterns the principle discussions describe (SHOULD level). Departures are legitimate with documented rationale.
+3. **Illustrative technology** — named products and projects throughout this document (specific memory products, databases, and harnesses cited in the convergence sections) are examples only. Deploying a named component does not by itself make a layer conformant, and no requirement below depends on any specific vendor.
+
+### Normative requirements
+
+| ID | Requirement |
+|---|---|
+| DCS-R1 | The durable store MUST be the system of record; context windows MUST be treated as disposable. |
+| DCS-R2 | Completion MUST be recorded in an explicit ledger, and “done” MUST NOT be recorded without verification evidence. |
+| DCS-R3 | Every session MUST end in a clean, resumable state. |
+| DCS-R4 | Initialization and orientation MUST be separated from worker execution. |
+| DCS-R5 | Startup MUST follow a deterministic orientation sequence before new work begins. |
+| DCS-R6 | Durable knowledge MUST be disclosed progressively through an index; bulk-loading the store into context MUST NOT be the default. |
+| DCS-R7 | Load-bearing state MUST be persisted before any lossy compaction event. |
+| DCS-R8 | Durable records MUST carry provenance and freshness metadata. |
+| DCS-R9 | Durable state MUST be identity-partitioned; cross-context bleed MUST NOT occur. |
+| DCS-R10 | The continuity record MUST be auditable: who recorded what, when, and on what evidence. |
 
 ---
 
@@ -320,6 +347,7 @@ This specification follows semantic versioning. Breaking changes to the conceptu
 - **v0.1-draft**: initial draft (2026-06-01). Internal review.
 - **v1.0**: first public release under CC BY 4.0 + MIT (2026-06-01). The temporal layer of the Spine catalog (PDS · ACS · ESF · CRI · AGS · DCS).
 - **v1.1**: catalog expanded to nine specs (added GDS, the Grounded Data Spine; ARS, the Agent Registry Spine; and SRS, the Sovereign Runtime Spine, as private/forthcoming foundation siblings) and the failure-attribution model expanded to ten-way (adding bad grounding to GDS, bad or missing registry to ARS, and bad or unbounded execution to SRS). No change to DCS's 10 principles (2026-06-02).
+- **v1.2** (2026-07-17): added the Conformance section — BCP 14 keywords, the required / recommended / illustrative three-tier separation, and numbered normative requirements DCS-R1–R10. Prompted in part by an external CIO architecture review (2026-07-17). No changes to the ten principles.
 
 ---
 

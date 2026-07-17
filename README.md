@@ -6,7 +6,7 @@
 
 [![License: CC BY 4.0](https://img.shields.io/badge/spec-CC_BY_4.0-blue?style=flat-square)](LICENSE-CC-BY-4.0)
 [![License: MIT](https://img.shields.io/badge/code-MIT-green?style=flat-square)](LICENSE-MIT)
-[![Status: v1.1](https://img.shields.io/badge/status-v1.1-0F766E?style=flat-square)](SPEC.md)
+[![Status: v1.2](https://img.shields.io/badge/status-v1.2-0F766E?style=flat-square)](SPEC.md)
 [![spec checks](https://github.com/drewmattie-code/Durable-Context-Spine/actions/workflows/spec-checks.yml/badge.svg)](https://github.com/drewmattie-code/Durable-Context-Spine/actions/workflows/spec-checks.yml)
 [![Catalog: PDS · ACS · ESF · CRI · AGS · DCS · GDS · ARS · SRS](https://img.shields.io/badge/catalog-PDS_·_ACS_·_ESF_·_CRI_·_AGS_·_DCS_·_GDS_·_ARS_·_SRS-7C3AED?style=flat-square)](#where-dcs-fits-in-the-stack)
 
