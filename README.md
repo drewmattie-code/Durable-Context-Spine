@@ -7,6 +7,7 @@
 [![License: CC BY 4.0](https://img.shields.io/badge/spec-CC_BY_4.0-blue?style=flat-square)](LICENSE-CC-BY-4.0)
 [![License: MIT](https://img.shields.io/badge/code-MIT-green?style=flat-square)](LICENSE-MIT)
 [![Status: v1.1](https://img.shields.io/badge/status-v1.1-0F766E?style=flat-square)](SPEC.md)
+[![spec checks](https://github.com/drewmattie-code/Durable-Context-Spine/actions/workflows/spec-checks.yml/badge.svg)](https://github.com/drewmattie-code/Durable-Context-Spine/actions/workflows/spec-checks.yml)
 [![Catalog: PDS · ACS · ESF · CRI · AGS · DCS · GDS · ARS · SRS](https://img.shields.io/badge/catalog-PDS_·_ACS_·_ESF_·_CRI_·_AGS_·_DCS_·_GDS_·_ARS_·_SRS-7C3AED?style=flat-square)](#where-dcs-fits-in-the-stack)
 
 </div>
@@ -81,6 +82,8 @@ The context window is scratch. The durable store is truth. Every session assumes
 ## Where DCS fits in the stack
 
 The Spine catalog names nine separable architectural concerns. PDS, ACS, ESF, CRI, and AGS sit on the *capability* axes: which tools, which agents, which external signals, which risk score, which governance. Four layers sit beneath them as *foundations* the capability layers depend on: **DCS is the *temporal* substrate (which state survives across time), GDS is the *grounding* substrate (which canonical, entitled data the agents reason over), ARS is the *system of record* layer (which agentic assets exist at all), and SRS is the *execution* substrate (the sovereign, first-party runtime the first-party agents run on).** DCS is the substrate the capability layers read from and write to across runs. (GDS, the Grounded Data Spine; ARS, the Agent Registry Spine; and SRS, the Sovereign Runtime Spine, are private/forthcoming siblings, named here as foundations alongside DCS.)
+
+**The two doors.** There are exactly two ways anything reaches an agent estate; the catalog governs both. **Door 1: outside applications plug INTO the Spine** — connected through governed boundaries (discovered via PDS, policy-gated by AGS, grounded by GDS, tracked in ARS). **Door 2: first-party agents run ON the Spine** — on the sovereign runtime (SRS) that composes the whole catalog, identity-bound, isolated, and bounded by construction. The rendered map lives at [saasquach.ai/spine](https://saasquach.ai/spine).
 
 ```
         ┌──────────────────────────────────────────────────┐
