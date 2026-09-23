@@ -45,7 +45,7 @@ For agents that don't natively support the skills convention, the SKILL.md is al
 
 ## Versioning
 
-The skill version tracks the spec version. Current: v1.0 (matches SPEC.md v1.0).
+The skill version tracks the spec version. Current: v1.2 (matches SPEC.md v1.2).
 
 ## Attribution
 
